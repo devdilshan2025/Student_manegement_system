@@ -45,5 +45,10 @@ public class StudentService {
         return studentList;
     }
 
+    public boolean deleteById(String id) {
+        studentRepository.deleteById(Long.parseLong(id));
+        return true;
+    }
+
 
 }
