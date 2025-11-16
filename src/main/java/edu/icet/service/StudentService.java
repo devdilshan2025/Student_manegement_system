@@ -50,5 +50,19 @@ public class StudentService {
         return true;
     }
 
+    public boolean update(Student student){
+        StudentEntity studentEntity = studentRepository.findById(student.getId()).get();
+
+        studentEntity.setId(student.getId());
+        studentEntity.setName(student.getName());
+        studentEntity.setAddress(student.getAddress());
+        studentEntity.setEmail(student.getEmail());
+        studentEntity.setPhone(student.getPhone());
+        studentEntity.setBirthday(student.getBirthday());
+
+        studentRepository.save(studentEntity);
+        return true;
+    }
+
 
 }
